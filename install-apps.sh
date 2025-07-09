@@ -53,6 +53,20 @@ else
   echo "Docker is already installed"
 fi
 
+# Git & SSH
+if [ ! -d "$HOME/.ssh" ]; then
+  echo "SSH key not found. Genereting..."
+
+  ssh-keygen -t ed25519 -C "jrposada.dev@gmail.com"
+
+  echo "Setting Git user..."
+  git config --global user.name "Javier Rodriguez Posada"
+  git config --global user.email "jrposada.dev@gmail.com"
+  git config --global core.editor "vim"
+else
+  echo "SSH key is already setup"
+fi
+
 # NVM
 if [ ! -s "$HOME/.nvm/nvm.sh" ]; then
   echo "NVM not detected. Installing..."

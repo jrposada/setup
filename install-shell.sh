@@ -63,19 +63,6 @@ else
   echo "ZSH is already installed"
 fi
 
-# Git & SSH
-if [ ! -d "$HOME/.ssh" ]; then
-  echo "SSH key not found. Genereting..."
-
-  ssh-keygen -t ed25519 -C "jrposada.dev@gmail.com"
-
-  echo "Setting Git user..."
-  git config --global user.name "Javier Rodriguez Posada"
-  git config --global user.email "jrposada.dev@gmail.com"
-else
-  echo "SSH key is already setup"
-fi
-
 echo "Configuring shell..."
 
 sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="steeef"/' ~/.zshrc
