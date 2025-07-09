@@ -188,9 +188,9 @@ update_discord() {
 }
 EOF
 
-  echo "Function update:discord added to tools.zsh"
+  echo "Function update_discord added to tools.zsh"
 else
-  echo "Function update:discord already exists in tools.zsh"
+  echo "Function update_discord already exists in tools.zsh"
 fi
 
 # Default shell
