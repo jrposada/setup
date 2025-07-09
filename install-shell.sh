@@ -178,6 +178,21 @@ else
   echo "Function temp already exists in tools.zsh"
 fi
 
+if ! grep -q "^update:discord()" "$TOOLS_FILE"; then
+  cat >> "$TOOLS_FILE" <<'EOF'
+
+update:discord() {
+  curl -o "$HOME/discord.deb" -L https://discord.com/api/download?platform=linux&format=deb 
+  sudo apt install -y "$HOME/discord.deb"
+  rm "$HOME/discord.deb"
+}
+EOF
+
+  echo "Function update:discord added to tools.zsh"
+else
+  echo "Function update:discord already exists in tools.zsh"
+fi
+
 # Default shell
 if [ "$(basename "$SHELL")" != "zsh" ]; then
   echo "Setting ZSH as default shell..."
