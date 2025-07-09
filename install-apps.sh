@@ -10,6 +10,16 @@ else
   echo "Brave Browser is already installed"
 fi
 
+# Caffeine
+if ! command -v caffeine >/dev/null 2>&1; then
+  echo "Caffeine not found. Installing..."
+
+  sudo apt update
+  sudo apt install -y caffeine
+else
+  echo "Caffeine is already installed"
+fi
+
 # Discord
 if ! command -v discord >/dev/null 2>&1; then
   # echo "Discord not found. Installing..."
@@ -28,7 +38,6 @@ if ! command -v docker >/dev/null 2>&1; then
   echo "Docker not found. Installing..."
 
   # Add Docker's official GPG key:
-  sudo apt update
   sudo apt install ca-certificates curl
   sudo install -m 0755 -d /etc/apt/keyrings
   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
