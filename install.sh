@@ -4,8 +4,7 @@ echo "### Setup: Start ==="
 
 REPO="jrposada/setup"
 BRANCH="main"
-BASE_URL="https://raw.githubusercontent.com/$REPO/$BRANCH"
-
+BASE_URL="https://raw.githubusercontent.com/$REPO/refs/heads/$BRANCH"
 curl -fsSL "$BASE_URL/install-shell.sh" | sh
 curl -fsSL "$BASE_URL/install-apps.sh" | sh
 curl -fsSL "$BASE_URL/install-fixes.sh" | sh
