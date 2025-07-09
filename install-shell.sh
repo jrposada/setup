@@ -178,10 +178,10 @@ else
   echo "Function temp already exists in tools.zsh"
 fi
 
-if ! grep -q "^update:discord()" "$TOOLS_FILE"; then
+if ! grep -q "^update_discord()" "$TOOLS_FILE"; then
   cat >> "$TOOLS_FILE" <<'EOF'
 
-update:discord() {
+update_discord() {
   curl -o "$HOME/discord.deb" -L https://discord.com/api/download?platform=linux&format=deb 
   sudo apt install -y "$HOME/discord.deb"
   rm "$HOME/discord.deb"
